@@ -102,9 +102,9 @@ def test_mesh_copying_works(cube):
 
 
 
-def test_mesh_can_draw():
+def test_mesh_can_draw(cube):
     print('testing the draw process..')
-    mesh = cube()
+    mesh = cube
     assert not mesh.vbos
     assert not mesh.vao
 
