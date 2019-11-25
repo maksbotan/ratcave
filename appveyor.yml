@@ -57,3 +57,15 @@ test_script:
 artifacts:
   - path: dist/*.whl
     name: wheels
+
+deploy:
+  description: 'Release'
+  provider: GitHub
+  auth_token:
+    secure: D0rvssFNbvMjYjXk+CAaNb2bklH7Y6/cLfU9x3614cY9EoKi4JgdvB5l9o4IfieQ
+  artifact: /.*\.whl/
+  draft: false
+  prerelease: false
+  on:
+    branch: master
+    APPVEYOR_REPO_TAG: true
